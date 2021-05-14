@@ -1,3 +1,5 @@
+import toDoForm from './todo.js';
+
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
     greeting = document.querySelector(".js-greetings");
@@ -17,14 +19,16 @@ function handleSubmit(event) {
 }
 
 function askForName() {
-    form.classList.add(SHOWING_CN)
-    form.addEventListener("submit", handleSubmit)
+    form.classList.add(SHOWING_CN);
+    toDoForm.classList.remove(SHOWING_CN);
+    form.addEventListener("submit", handleSubmit);
 }
 
 function paintGreeting(text) {
-    form.classList.remove(SHOWING_CN)
-    greeting.classList.add(SHOWING_CN)
-    greeting.innerText = `Hello ${text}`
+    form.classList.remove(SHOWING_CN);
+    greeting.classList.add(SHOWING_CN);
+    toDoForm.classList.add(SHOWING_CN);
+    greeting.innerText = `Hello, ${text}\nWhat is your main focus for today?`;
 }
 
 function loadName() {
