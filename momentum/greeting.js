@@ -1,4 +1,4 @@
-import toDoForm from './todo.js';
+import { toDoForm } from './todo.js';
 
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),

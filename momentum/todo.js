@@ -2,6 +2,8 @@ const toDoForm = document.querySelector(".js-toDoForm"),
     toDoInput = toDoForm.querySelector("input"),
     toDoList = document.querySelector(".js-toDoList");
 
+export {toDoForm}
+
 const TODOS_LS = "toDos";
 
 let toDos = [];
@@ -35,7 +37,7 @@ function paintToDo(text) {
     toDoList.appendChild(li);
     const toDoObj = {
         text: text,
-        id: newId
+        id: newId,
     };
     toDos.push(toDoObj);
     saveToDos();
@@ -53,7 +55,7 @@ function loadToDos() {
     if (loadedToDos !== null) {
         const parsedToDos = JSON.parse(loadedToDos);
         parsedToDos.forEach(function(toDo){
-        paintToDo(toDo.text);
+            paintToDo(toDo.text);
         });
     };
 }
